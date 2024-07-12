@@ -1,0 +1,56 @@
+1.Why are closures useful in JavaScript? Give an example use case.
+
+ Is used to prevent leaking or exposing data where it's not needed.
+ Example use case are in Event Listeners where closures allows the event listeners function get
+ outside scope of that event listener function. Also in Memoization where closures to remember a 
+ functions results since that function is a resource intensive task, we dont have to repeat the 
+ process again to get the same result.
+
+
+
+2. When should you choose to use “let” or “const”
+
+ In the time where the variables value remain constant then we should use 'const', which means 
+ throughout the entire program the value should not be changed.
+
+ 'let' can be used when the programs requirement is can be changed dynamically during the execution time. Example is when incrementing or decrementing a flag operator is one such example.
+
+
+
+3. Give an example of a common mistake related to hoisting and explain how to fix it.
+
+ Hoisting is the process of declaration of variables at the top because is any process requires
+ those data, if not declared at the top at the time of execution that data wont be defined at 
+ all.
+ 
+ common example:
+ 
+ let n;
+ console.log(n);
+ n = 7;
+
+ at the time of console logging the value of the 'n' variable there is no data declared to the 
+ variable. so the fix is this:
+
+ let n = 7;
+ console.log(n);
+
+
+
+4. 
+
+ 1st console.log() result is [1, 2, 3]. Because already the arr has values and foo1() appends
+ value '3' so the result is [1, 2, 3]
+
+ 2nd console.log() result is [1, 2, 3], because the foo2() function primarily doesnt affect the
+ arr variable so the result is [1, 2, 3].
+
+ 3rd console.log result is [1, 2, 3, 3], because the arr values are assigned to variable 'b' 
+ and 'b' got appended the value 3 so the result is [1, 2, 3, 3]
+
+ 4th console.log result is [1, 2, 3, 3], becuase foo4 is getting an argument arr but all the 
+ changes are done to arg only, and the console.log() is printing the variable arr not arg so
+ the result is [1, 2, 3, 3].
+
+
+ 
